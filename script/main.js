@@ -11,13 +11,16 @@ let navButtons = document.querySelectorAll("#buttonHolder img",)
 // functions go in the middle
 // these are the "actions" that should happen
 function changeBGImage() {
-	debugger;
+	let newBGPath = "images/backGround" + this.id + ".jpg";
+	// debugger;
 	// object.property = "new value"
 	// theHeadline.textcontent = "Drag and Drop is Fun!";
 	// theHeadline.classlist.add('orange-headline');
 
 	// change background image in the drop zone 
-	puzzleBoard.style.backgroundImage = 'url ("../images/backGround"' + this.id + '".jpg")';
+	// the `${}` is called a javascript trmpkate string - whatever is inside the curly brace is evaluated at
+	// runtime and interpolated (replaces the bracket notation)
+	puzzleBoard.style.backgroundImage = `url(images/backGround${this.id}.jpg)`;
 }
 
 // event handling at the bottom => how things react when you
